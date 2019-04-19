@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-//        LazySingleton lazySingleton = LazySingleton.getInstance();
+//        LazyMethodSingleton lazySingleton = LazyMethodSingleton.getInstance();
 
 //        Thread t1 = new Thread(new T());
 //        Thread t2 = new Thread(new T());
@@ -34,21 +34,21 @@ public class Test {
 //        System.out.println(instance == newInstance);
 
 //        Class objectClass = HungrySingleton.class;
-//        Class objectClass = StaticInnerClassSingleton.class;
+//        Class objectClass = LazyStaticInnerClassSingleton.class;
 
-        Class objectClass = LazySingleton.class;
+        Class objectClass = LazyMethodSingleton.class;
 
         Constructor constructor = objectClass.getDeclaredConstructor();
         constructor.setAccessible(true);
 
-        LazySingleton instance = LazySingleton.getInstance();
-        LazySingleton newInstance = (LazySingleton) constructor.newInstance();
+        LazyMethodSingleton instance = LazyMethodSingleton.getInstance();
+        LazyMethodSingleton newInstance = (LazyMethodSingleton) constructor.newInstance();
 
 //        HungrySingleton instance = HungrySingleton.getInstance();
 //        HungrySingleton newInstance = (HungrySingleton) constructor.newInstance();
 
-//        StaticInnerClassSingleton instance = StaticInnerClassSingleton.getInstance();
-//        StaticInnerClassSingleton newInstance = (StaticInnerClassSingleton) constructor.newInstance();
+//        LazyStaticInnerClassSingleton instance = LazyStaticInnerClassSingleton.getInstance();
+//        LazyStaticInnerClassSingleton newInstance = (LazyStaticInnerClassSingleton) constructor.newInstance();
 
         System.out.println(instance);
         System.out.println(newInstance);

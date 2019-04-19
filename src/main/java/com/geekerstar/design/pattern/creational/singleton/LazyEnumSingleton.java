@@ -5,7 +5,7 @@ package com.geekerstar.design.pattern.creational.singleton;
  * date: 2019/1/11 11:08
  * description:
  */
-public enum  EnumInstance {
+public enum LazyEnumSingleton {
     INSTANCE{
         protected void printTest(){
             System.out.println("print test");
@@ -22,7 +22,7 @@ public enum  EnumInstance {
     public void setData(Object data) {
         this.data = data;
     }
-    public static EnumInstance getInstance(){
+    public static LazyEnumSingleton getInstance(){
         return INSTANCE;
     }
 }
